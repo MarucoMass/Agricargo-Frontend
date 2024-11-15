@@ -7,6 +7,7 @@ import { useAuthContext } from "../../components/context/AuthProvider";
 import Button from "../../components/button/Button";
 import useFetchData from "../../hooks/useFetchData/UseFetchData";
 import ModalFetch from "../../components/modalFetch/modalFetch";
+import ConfirmationModal from "../../components/confimationModal/ConfirmationModal";
 
 const AdminListShips = () => {
   const { userProfile } = useAuthContext();
@@ -15,19 +16,27 @@ const AdminListShips = () => {
     userProfile.token
   );
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [shipToDelete, setShipToDelete] = useState(null);
+
   const [filteredShips, setFilteredShips] = useState(initialShips || []);
   const [filterActivate, setFilterActivate] = useState(false);
   const [isAscending, setIsAscending] = useState(true);
   const navigate = useNavigate();
 
-    const [message, setMessage] = useState("");
-    const [showModal, setShowModal] = useState(false);
+  const [message, setMessage] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const statusOrder = ["Disponible", "Ocupado"];
 
   useEffect(() => {
     setFilteredShips(initialShips);
   }, [initialShips]);
+
+  const handleDeleteClick = (ship) =>{
+    setIsModalOpen(true);
+    setShipToDelete(ship);
+  }
 
   const sortShipsByStatus = () => {
     const sorted = [...filteredShips].sort((a, b) => {
@@ -66,7 +75,11 @@ const AdminListShips = () => {
       setFilteredShips((prevShips) =>
       prevShips.filter((ship) => ship.id !== item.id)
       );
+      setIsModalOpen(false);
+      setShipToDelete(null);
     } catch (error) {
+        setIsModalOpen(false);
+        setShipToDelete(null);
         setMessage(error.message);
         setShowModal(true);
         console.error("Error:", error.message);
@@ -101,9 +114,14 @@ const AdminListShips = () => {
     },
     {
       label: "Eliminar",
-      handler: removeShip,
+      handler: handleDeleteClick,
       className: "bg-red-500 hover:bg-red-700",
     },
+    // {
+    //   label: "Eliminar",
+    //   handler: removeShip,
+    //   className: "bg-red-500 hover:bg-red-700",
+    // },
   ];
 
   const columns = [
@@ -120,6 +138,11 @@ const AdminListShips = () => {
       {showModal && (
         <ModalFetch message={message} onClose={() => setShowModal(false)} />
       )}
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={removeShip}
+      />
       <SortSection
         title={"Barcos:"}
         sortOptions={sortOptions}

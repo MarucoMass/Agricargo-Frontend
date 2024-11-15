@@ -56,6 +56,7 @@ const SuperAdminList = () => {
       setUsers(usersFiltered);
       setIsModalOpen(false); // Cierra el modal después de eliminar
     } catch (error) {
+      setIsModalOpen(false);
       console.error("Error:", error);
     }
   };

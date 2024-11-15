@@ -6,8 +6,12 @@ import AdminLayout from "../../layout/AdminLayout";
 import { useAuthContext } from "../../components/context/AuthProvider";
 import useFetchData from "../../hooks/useFetchData/UseFetchData";
 import ModalFetch from "../../components/modalFetch/modalFetch";
+import ConfirmationModal from "../../components/confimationModal/ConfirmationModal";
 
 const AdminCreateTrip = () => {
+
+  const [tripToDelete, setTripToDelete] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const { userProfile } = useAuthContext();
   const {
@@ -37,6 +41,11 @@ const AdminCreateTrip = () => {
       {ship.typeShip} - {ship.shipPlate}
     </option>
   ));
+
+  const handleDeleteClick = (trip) =>{
+    setTripToDelete(trip);
+    setIsModalOpen(true);
+  }
 
   const handleSubmit = async (e) => {
     
@@ -152,10 +161,13 @@ const AdminCreateTrip = () => {
 
           const filteredTrips = trips.filter((trips) => trips.id != item.id);
           setTrips(filteredTrips);
- 
+          setIsModalOpen(false);
+          setTripToDelete(null);
         } catch (error) {
-           setMessage(error.message);
-           setShowModal(true);
+          setIsModalOpen(false);
+          setTripToDelete(null);
+          setMessage(error.message);
+          setShowModal(true);
           console.error("Error:", error);
         }
     }
@@ -180,9 +192,14 @@ const AdminCreateTrip = () => {
     },
     {
       label: "Eliminar",
-      handler: removeTrip,
+      handler: handleDeleteClick,
       className: "bg-red-500 hover:bg-red-700",
     },
+    // {
+    //   label: "Eliminar",
+    //   handler: removeTrip,
+    //   className: "bg-red-500 hover:bg-red-700",
+    // },
   ];
 
   const columns = [
@@ -197,6 +214,11 @@ const AdminCreateTrip = () => {
       {showModal && (
         <ModalFetch message={message} onClose={() => setShowModal(false)} />
       )}
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={removeTrip}
+      />
       <section className="w-full px-8 md:px-20 flex flex-col gap-6 pt-10">
         <h1 className="text-black text-3xl font-semibold dark:text-white">
           Crear viaje
