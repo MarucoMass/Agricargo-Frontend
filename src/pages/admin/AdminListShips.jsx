@@ -54,10 +54,12 @@ const AdminListShips = () => {
     setFilterActivate(false);
   };
 
-  const removeShip = async (item) => {
+  const removeShip = async () => {
+    if(!shipToDelete) return;
+
     try {
       const response = await fetch(
-        `https://localhost:7183/Ship/deleteShip/${item.id}`,
+        `https://localhost:7183/Ship/deleteShip/${shipToDelete.id}`,
         {
           method: "DELETE",
           headers: {
@@ -142,6 +144,7 @@ const AdminListShips = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onConfirm={removeShip}
+        message={"¿Estás seguro de que deseas eliminar este Barco?"}
       />
       <SortSection
         title={"Barcos:"}

@@ -94,6 +94,7 @@ const SuperAdminList = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)} // Cierra el modal sin eliminar
         onConfirm={removeUser} // Confirma y elimina el usuario
+        message={"¿Estás seguro de que deseas eliminar este Usuario?"}
       />
     </SuperAdminLayout>
   );

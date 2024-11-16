@@ -141,11 +141,13 @@ const AdminCreateTrip = () => {
     setEditMode(false);
   };
 
-  const removeTrip = async (item) => {
+  const removeTrip = async () => {
+    if(!tripToDelete) return;
+
     if (!editMode) {
         try {
           const response = await fetch(
-            `https://localhost:7183/Trip/deleteTrip/${item.id}`,
+            `https://localhost:7183/Trip/deleteTrip/${tripToDelete.id}`,
             {
               method: "DELETE",
               headers: {
@@ -218,6 +220,7 @@ const AdminCreateTrip = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onConfirm={removeTrip}
+        message={"¿Estás seguro de que deseas eliminar este Viaje?"}
       />
       <section className="w-full px-8 md:px-20 flex flex-col gap-6 pt-10">
         <h1 className="text-black text-3xl font-semibold dark:text-white">

@@ -1,7 +1,7 @@
 import React from "react";
 import { FaExclamationTriangle } from "react-icons/fa";
 
-const ConfirmationModal = ({ isOpen, onClose, onConfirm }) => {
+const ConfirmationModal = ({ isOpen, onClose, onConfirm, message}) => {
   if (!isOpen) return null;
 
   return (
@@ -11,7 +11,7 @@ const ConfirmationModal = ({ isOpen, onClose, onConfirm }) => {
           <FaExclamationTriangle className="text-yellow-500 text-3xl mr-2" />
           <h2 className="text-xl font-semibold text-black">Confirmar eliminación</h2>
         </div>
-        <p className="text-center mb-6 text-black">¿Estás seguro de que deseas eliminar este usuario?</p>
+        <p className="text-center mb-6 text-black">{message}</p>
         <div className="flex justify-around">
           <button
             onClick={onClose}
