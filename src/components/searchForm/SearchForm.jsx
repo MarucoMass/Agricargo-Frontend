@@ -17,9 +17,9 @@ const SearchForm = ({ isSearchMode = true, searchSetter }) => {
   });
 
   // Refs for input fields
-  const originRef = useRef();
-  const destinationRef = useRef();
-  const quantityRef = useRef();
+  const originRef = useRef(null);
+  const destinationRef = useRef(null);
+  const quantityRef = useRef(null);
 
   // Validate individual fields
   const validateField = (field, value) => {

@@ -15,7 +15,7 @@ const Navbar = ({searchInNav, islogged, backButton, toggleSidebar}) => {
 
   return (
     <nav
-      className={`w-full h-28 fixed top-0 left-0 z-30 flex ${flexSpacing} pl-8 md:pl-80 items-center pr-8  border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700`}
+      className={`bg-white w-full h-28 fixed top-0 left-0 z-30 flex ${flexSpacing} pl-8 md:pl-80 items-center pr-8  border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700`}
     >
       <button
         type="button"

@@ -24,7 +24,7 @@ const ReusableTable = ({ columns, data, actions, statusColumn }) => {
     data.map((item) => (
       <tr key={item.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
         {columns.map((column) => (
-          <td key={column.key} className="px-6 py-4">
+          <td key={`${column.key}-${item.id}`} className="px-6 py-4">
             {statusColumn && column.key === statusColumn ? (
               <span className={`py-2 px-3 rounded-xl ${statusStyles[item[column.key]]}`}>
                 {item[column.key]}

@@ -29,6 +29,7 @@ import ClientTripDetail from "./pages/client/ClientTripDetail";
 import ClientTripPayment from "./pages/client/ClientTripPayment";
 import NotFound from "./components/notFound/NotFound";
 import { DarkModeProvider } from "./components/context/DarkModeProvider";
+import AdminShips from "./pages/admin/AdminShips";
 
 const router = createBrowserRouter([
   {
@@ -95,7 +96,8 @@ const router = createBrowserRouter([
     path: "/empresa/barcos",
     element: (
       <ProtectedRoute allowedRoles={["Admin"]}>
-        <AdminListShips/>
+        <AdminShips/>
+        {/* <AdminListShips/> */}
       </ProtectedRoute>
     )
   },
