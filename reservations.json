@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "trip": "Buenos Aires - Rosario",
+    "date": "2024-5-2",
+    "price": "1200000",
+    "status": "Finalizado"
+  },
+  {
+    "id": 2,
+    "trip": "Mendoza - San Juan",
+    "date": "2024-1-13",
+    "price": "1100000",
+    "status": "En viaje"
+  },
+  {
+    "id": 3,
+    "trip": "Salta - Jujuy",
+    "date": "2024-10-12",
+    "price": "1200000",
+    "status": "En viaje"
+  },
+  {
+    "id": 4,
+    "trip": "Córdoba - La Rioja",
+    "date": "2024-10-19",
+    "price": "2300000",
+    "status": "En preparación"
+  },
+  {
+    "id": 5,
+    "trip": "Tucumán - Catamarca",
+    "date": "2024-5-12",
+    "price": "1250000",
+    "status": "Finalizado"
+  },
+  {
+    "id": 6,
+    "trip": "Neuquén - Bariloche",
+    "date": "2024-10-12",
+    "price": "1200000",
+    "status": "En viaje"
+  },
+  {
+    "id": 7,
+    "trip": "Santa Fe - Paraná",
+    "date": "2024-9-8",
+    "price": "3200000",
+    "status": "En preparación"
+  },
+  {
+    "id": 8,
+    "trip": "Posadas - Corrientes",
+    "date": "2024-6-12",
+    "price": "1000000",
+    "status": "Finalizado"
+  }
+]

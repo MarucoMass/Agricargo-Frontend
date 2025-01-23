@@ -1,0 +1,18 @@
+[
+  {
+    "price": 120,
+    "destination": "Rosario",
+    "origin": "United States",
+    "shippingTime": 4,
+    "nextShipping": "2024-10-24",
+    "businessName": "Massonnat Ships"
+  },
+  {
+    "price": 350,
+    "destination": "Lima",
+    "origin": "Peru",
+    "shippingTime": 6,
+    "nextShipping": "2024-11-05",
+    "businessName": "Pacific Traders"
+  }
+]

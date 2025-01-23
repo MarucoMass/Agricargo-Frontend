@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "price": 120,
+    "destination": "Rosario",
+    "origin": "United States",
+    "shippingTime": 4,
+    "nextShipping": "2024-10-24",
+    "businessName": "Massonnat Ships",
+    "quantity": "10",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 2,
+    "price": 180,
+    "destination": "Buenos Aires",
+    "origin": "Brazil",
+    "shippingTime": 5,
+    "nextShipping": "2024-10-30",
+    "businessName": "Atlantic Carriers",
+    "quantity": "14",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 4,
+    "price": 250,
+    "destination": "Montevideo",
+    "origin": "Canada",
+    "shippingTime": 6,
+    "nextShipping": "2024-11-05",
+    "businessName": "Oceanic Lines",
+    "quantity": "8",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 5,
+    "price": 320,
+    "destination": "Santiago",
+    "origin": "Chile",
+    "shippingTime": 7,
+    "nextShipping": "2024-11-10",
+    "businessName": "Andean Freight",
+    "quantity": "10",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 6,
+    "price": 150,
+    "destination": "Asunción",
+    "origin": "Paraguay",
+    "shippingTime": 3,
+    "nextShipping": "2024-10-20",
+    "businessName": "Southern Logistics",
+    "quantity": "9",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 8,
+    "price": 400,
+    "destination": "Montevideo",
+    "origin": "Uruguay",
+    "shippingTime": 5,
+    "nextShipping": "2024-11-15",
+    "businessName": "Uruguayan Shipping Co.",
+    "quantity": "10",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 9,
+    "price": 600,
+    "destination": "Buenos Aires",
+    "origin": "Colombia",
+    "shippingTime": 8,
+    "nextShipping": "2024-11-22",
+    "businessName": "Caribbean Logistics",
+    "quantity": "10",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 10,
+    "price": 350,
+    "destination": "Lima",
+    "origin": "Peru",
+    "shippingTime": 6,
+    "nextShipping": "2024-11-05",
+    "businessName": "Pacific Traders",
+    "quantity": "10",
+    "departureDate": "2024-10-20",
+    "arrivalDate": "2024-10-21"
+  },
+  {
+    "id": 20,
+    "price": 380,
+    "destination": "Buenos Aires",
+    "origin": "Brazil",
+    "shippingTime": 5,
+    "nextShipping": "2024-11-02",
+    "businessName": "Atlantic Ships",
+    "quantity": "19",
+    "departureDate": "2024-10-25",
+    "arrivalDate": "2024-10-29"
+  }
+]
